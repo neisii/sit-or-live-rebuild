@@ -1,0 +1,14 @@
+{
+  "name": "Daylight Survivor",
+  "type": "light",
+  "colors": {
+    "editor.background": "#FFF8DC",
+    "editor.foreground": "#2F4F4F",
+    "activityBar.background": "#FFD700",
+    "activityBar.foreground": "#2F4F4F",
+    "sideBar.background": "#FFFACD",
+    "sideBar.foreground": "#2F4F4F",
+    "statusBar.background": "#FFA500",
+    "statusBar.foreground": "#2F4F4F"
+  }
+}

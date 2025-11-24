@@ -1,0 +1,43 @@
+{
+  "name": "Rainy Cemetery",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#1C1C2E",
+    "editor.foreground": "#B0C4DE",
+    "activityBar.background": "#4682B4",
+    "activityBar.foreground": "#FFFFFF",
+    "sideBar.background": "#252538",
+    "sideBar.foreground": "#B0C4DE",
+    "statusBar.background": "#5F9EA0",
+    "statusBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#4682B4",
+    "titleBar.activeForeground": "#FFFFFF"
+  },
+  "tokenColors": [
+    {
+      "scope": ["comment"],
+      "settings": {
+        "foreground": "#6495ED",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": ["keyword", "storage"],
+      "settings": {
+        "foreground": "#87CEEB"
+      }
+    },
+    {
+      "scope": ["string"],
+      "settings": {
+        "foreground": "#5F9EA0"
+      }
+    },
+    {
+      "scope": ["variable", "entity.name"],
+      "settings": {
+        "foreground": "#B0C4DE"
+      }
+    }
+  ]
+}

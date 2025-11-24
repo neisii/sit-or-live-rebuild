@@ -83,6 +83,15 @@ npm run tauri:build
 # Output: src-tauri/target/release/bundle/
 ```
 
+### Web Dashboard
+
+```bash
+cd web-dashboard
+npm install
+npm run dev
+# Open http://localhost:3000
+```
+
 ## 📚 Documentation
 
 Complete reconstruction documentation is available in `docs/refact/`:

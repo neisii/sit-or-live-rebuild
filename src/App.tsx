@@ -9,6 +9,7 @@ import { WelcomeTooltip } from './components/WelcomeTooltip';
 import { ZombieWarning } from './components/ZombieWarning';
 import { EyeBreakReminder } from './components/EyeBreakReminder';
 import { Language, getCurrentLanguage, setCurrentLanguage, getTranslations } from './i18n/translations';
+import { sendThemeChangeNotification } from './services/discordService';
 
 interface WeatherData {
   temperature: number;
@@ -146,6 +147,14 @@ function App() {
           longitude: loc.longitude
         },
         weatherData.weatherCode
+      );
+
+      // Send Discord notification
+      await sendThemeChangeNotification(
+        weatherData.theme,
+        loc.name,
+        loc.country,
+        weatherData.weatherDescription
       );
     } catch (err) {
       setError('Failed to load weather data');

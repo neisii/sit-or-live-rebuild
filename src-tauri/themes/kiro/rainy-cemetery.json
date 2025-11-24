@@ -1,0 +1,14 @@
+{
+  "name": "Rainy Cemetery",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#1C1C2E",
+    "editor.foreground": "#B0C4DE",
+    "activityBar.background": "#4682B4",
+    "activityBar.foreground": "#FFFFFF",
+    "sideBar.background": "#252538",
+    "sideBar.foreground": "#B0C4DE",
+    "statusBar.background": "#5F9EA0",
+    "statusBar.foreground": "#FFFFFF"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Vampire Night",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#0D0D0D",
+    "editor.foreground": "#E0E0E0",
+    "activityBar.background": "#8B0000",
+    "activityBar.foreground": "#FFFFFF",
+    "sideBar.background": "#1A1A1A",
+    "sideBar.foreground": "#E0E0E0",
+    "statusBar.background": "#DC143C",
+    "statusBar.foreground": "#FFFFFF"
+  }
+}
