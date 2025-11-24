@@ -1,0 +1,117 @@
+.welcome-tooltip-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.welcome-tooltip-overlay.visible {
+  opacity: 1;
+}
+
+.welcome-tooltip {
+  background: #1a1a2e;
+  border: 2px solid #646cff;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease-out;
+}
+
+.tooltip-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s;
+}
+
+.tooltip-close:hover {
+  color: white;
+}
+
+.welcome-tooltip h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.tooltip-subtitle {
+  margin: 0 0 1.5rem 0;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.tooltip-content {
+  margin: 1.5rem 0;
+}
+
+.tooltip-section {
+  margin-bottom: 1.5rem;
+}
+
+.tooltip-section h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #646cff;
+}
+
+.tooltip-section p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.tooltip-section ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.tooltip-section li {
+  margin: 0.25rem 0;
+}
+
+.tooltip-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #646cff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tooltip-button:hover {
+  background: #535bf2;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -4,7 +4,10 @@ import { Location, getCurrentLocation, setCurrentLocation, searchCities, BUILT_I
 import { getWeather } from './services/weatherService';
 import { applyTheme, loadInitialTheme, ThemeName } from './services/themeService';
 import { startHealthMonitoring, stopHealthMonitoring, getHealthSettings, formatTime, HealthStats } from './services/healthService';
-import { EyeHealthStats } from './services/eyeHealthService';
+import { startEyeHealthMonitoring, stopEyeHealthMonitoring, getEyeHealthSettings, getRandomHalloweenCharacter, completeBreak, skipBreak, EyeHealthStats } from './services/eyeHealthService';
+import { WelcomeTooltip } from './components/WelcomeTooltip';
+import { ZombieWarning } from './components/ZombieWarning';
+import { EyeBreakReminder } from './components/EyeBreakReminder';
 
 interface WeatherData {
   temperature: number;
@@ -25,11 +28,21 @@ function App() {
   
   // Health monitoring
   const [healthStats, setHealthStats] = useState<HealthStats | null>(null);
-  const [eyeHealthStats] = useState<EyeHealthStats | null>(null);
+  const [eyeHealthStats, setEyeHealthStats] = useState<EyeHealthStats | null>(null);
+  const [showZombieWarning, setShowZombieWarning] = useState(false);
+  const [showEyeBreak, setShowEyeBreak] = useState(false);
+  const [showWelcomeTooltip, setShowWelcomeTooltip] = useState(false);
+  const [halloweenCharacter, setHalloweenCharacter] = useState(getRandomHalloweenCharacter());
 
   // Initial load
   useEffect(() => {
     loadInitialTheme();
+    
+    // Check if first run
+    const hasSeenWelcome = localStorage.getItem('hasSeenWelcome');
+    if (!hasSeenWelcome) {
+      setShowWelcomeTooltip(true);
+    }
     
     const savedLocation = getCurrentLocation();
     if (savedLocation) {
@@ -56,9 +69,9 @@ function App() {
     const intervalId = startHealthMonitoring(
       (stats) => setHealthStats(stats),
       () => {
-        // Zombie warning - simplified for now
+        // Zombie warning
         if (settings.enableWarnings) {
-          console.log('Zombie warning: Move!');
+          setShowZombieWarning(true);
         }
       }
     );
@@ -69,6 +82,42 @@ function App() {
       }
     };
   }, []);
+
+  // Start eye health monitoring
+  useEffect(() => {
+    const settings = getEyeHealthSettings();
+    if (!settings.enableEyeHealth) return;
+
+    const intervalId = startEyeHealthMonitoring(
+      (stats) => setEyeHealthStats(stats),
+      () => {
+        setHalloweenCharacter(getRandomHalloweenCharacter());
+        setShowEyeBreak(true);
+      },
+      () => healthStats?.idleTime || 0
+    );
+
+    return () => {
+      if (intervalId) {
+        stopEyeHealthMonitoring(intervalId);
+      }
+    };
+  }, [healthStats?.idleTime]);
+
+  const handleCloseWelcome = () => {
+    setShowWelcomeTooltip(false);
+    localStorage.setItem('hasSeenWelcome', 'true');
+  };
+
+  const handleCompleteBreak = () => {
+    completeBreak();
+    setShowEyeBreak(false);
+  };
+
+  const handleSkipBreak = () => {
+    skipBreak();
+    setShowEyeBreak(false);
+  };
 
   const loadWeather = async (loc: Location) => {
     setLoading(true);
@@ -115,7 +164,24 @@ function App() {
   };
 
   return (
-    <div className="container">
+    <>
+      {showWelcomeTooltip && <WelcomeTooltip onClose={handleCloseWelcome} />}
+      {showZombieWarning && healthStats && (
+        <ZombieWarning 
+          onClose={() => setShowZombieWarning(false)}
+          idleMinutes={Math.floor(healthStats.idleTime / 60)}
+        />
+      )}
+      {showEyeBreak && (
+        <EyeBreakReminder 
+          onComplete={handleCompleteBreak}
+          onSkip={handleSkipBreak}
+          breakDuration={getEyeHealthSettings().breakDuration}
+          character={halloweenCharacter}
+        />
+      )}
+      
+      <div className="container">
       <div className="header">
         <h1 className="title">🧟 Sit or Live</h1>
         <p className="subtitle">Stay healthy while coding</p>
@@ -257,6 +323,7 @@ function App() {
         </ul>
       </div>
     </div>
+    </>
   );
 }
 

@@ -1,0 +1,95 @@
+.zombie-warning-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.zombie-warning {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 3px solid #ff6b6b;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 400px;
+  text-align: center;
+  animation: shake 0.5s ease-in-out;
+}
+
+.zombie-emoji {
+  font-size: 4rem;
+  animation: bounce 1s infinite;
+}
+
+.zombie-message {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.zombie-advice {
+  font-size: 0.9rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.zombie-button {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-top: 1rem;
+}
+
+.zombie-button:hover {
+  transform: scale(1.05);
+}
+
+.zombie-auto-close {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
