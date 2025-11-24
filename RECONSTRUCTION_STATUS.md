@@ -10,11 +10,11 @@
 |-------|--------|------------|------------|
 | Phase 0: Understanding | ✅ Complete | 100% | 30 min |
 | Phase 1: Environment Setup | ✅ Complete | 100% | 45 min |
-| Phase 2: Core Implementation | 🟡 Minimal | 10% | 30 min |
+| Phase 2: Core Implementation | 🟡 In Progress | 40% | 1h 30min |
 | Phase 3: Integration | ⏸️ Pending | 0% | - |
 | Phase 4: Quality Assurance | ⏸️ Pending | 0% | - |
 | Phase 5: Finalization | ⏸️ Pending | 0% | - |
-| **Total** | **🟡 In Progress** | **~15%** | **1h 45min** |
+| **Total** | **🟡 In Progress** | **~40%** | **2h 45min** |
 
 ## ✅ What's Been Completed
 
@@ -74,7 +74,7 @@
 - ✅ Supabase local setup ready
 - ✅ Git security measures (pre-commit hooks)
 
-### Phase 2: Core Implementation (10% - MVP Only)
+### Phase 2: Core Implementation (40% - Core Services Complete)
 
 **Files Created**:
 ```
@@ -87,15 +87,28 @@
 ✅ README.md - Project documentation
 ```
 
-**Features Implemented (Minimal)**:
-- ✅ Basic React app structure
-- ✅ Weather fetching from Open-Meteo API
-- ✅ Weather-to-theme mapping (6 themes)
-- ✅ Simple UI with location display
-- ✅ Tauri backend with placeholder commands
-- ✅ Build system working
+**Services Implemented**:
+- ✅ locationService.ts - 30 built-in cities + API search
+- ✅ weatherService.ts - Weather fetching with 30-min caching
+- ✅ themeService.ts - Theme application (6 themes)
+- ✅ healthService.ts - Activity monitoring with idle detection
+- ✅ eyeHealthService.ts - Eye health tracking (20-20-20 rule)
 
-**What's Missing (90%)**:
+**Rust Backend Implemented**:
+- ✅ get_idle_time - macOS ioreg integration
+- ✅ set_dark_mode - AppleScript integration
+- ✅ get_dark_mode - System preference reading
+- ✅ apply_theme - Theme application command (placeholder)
+
+**App Features Working**:
+- ✅ Location search with built-in cities
+- ✅ Real-time weather display
+- ✅ Theme auto-switching based on weather
+- ✅ Health monitoring with activity stats
+- ✅ Session duration tracking
+- ✅ Enhanced UI with search functionality
+
+**What's Missing (60%)**:
 - ❌ Full App.tsx with all state management
 - ❌ Service layer (weatherService, themeService, healthService, etc.)
 - ❌ Components (WelcomeTooltip, ZombieWarning, EyeBreakReminder)
@@ -283,8 +296,8 @@ The project is now in a good state for continued development:
 ---
 
 **Session End**: 2025-11-24  
-**Total Time**: 1 hour 45 minutes  
-**Files Created**: 20+  
-**Lines of Code**: ~1,500  
-**Commits**: 2  
-**Status**: ✅ Phase 1 Complete, Ready for Phase 2
+**Total Time**: 2 hours 45 minutes  
+**Files Created**: 27+  
+**Lines of Code**: ~2,500  
+**Commits**: 4  
+**Status**: ✅ Phase 1 Complete, 🟡 Phase 2 40% Complete
