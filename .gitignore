@@ -1,0 +1,84 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+screenshots/
+
+# Production
+dist/
+build/
+.next/
+out/
+
+# Environment Variables (CRITICAL - NEVER COMMIT)
+.env
+.env.local
+.env.production
+.env.development
+.env.*.local
+web-dashboard/.env
+web-dashboard/.env.local
+web-dashboard/.env.production
+
+# Secrets (CRITICAL - NEVER COMMIT)
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+.secrets/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
+
+# Tauri
+src-tauri/target/
+src-tauri/WixTools/
+src-tauri/gen/
+
+# Supabase
+.vercel/
+supabase/.branches/
+supabase/.temp/
+
+# Temporary
+.tmp/
+.temp/
+*.tmp
+*.temp

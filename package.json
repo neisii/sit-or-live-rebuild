@@ -1,0 +1,43 @@
+{
+  "name": "sit-or-live",
+  "version": "0.1.0",
+  "description": "Weather-based theme changer + Developer health manager",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "tauri:dev": "cross-env VITE_TIMER_MODE=rust tauri dev",
+    "tauri:dev:rust": "cross-env VITE_TIMER_MODE=rust tauri dev",
+    "tauri:dev:js": "cross-env VITE_TIMER_MODE=javascript tauri dev",
+    "tauri:build": "cross-env VITE_TIMER_MODE=rust tauri build",
+    "tauri:build:rust": "cross-env VITE_TIMER_MODE=rust tauri build",
+    "tauri:build:js": "cross-env VITE_TIMER_MODE=javascript tauri build",
+    "generate-themes": "node scripts/generate-theme-presets.cjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@tauri-apps/plugin-dialog": "^2.4.2",
+    "@tauri-apps/plugin-log": "^2.7.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/api": "^2.1.1",
+    "@tauri-apps/cli": "^2.1.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "@vitest/ui": "^4.0.10",
+    "cross-env": "^10.1.0",
+    "husky": "^9.0.0",
+    "jsdom": "^27.2.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vitest": "^4.0.10"
+  }
+}
