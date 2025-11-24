@@ -1,0 +1,175 @@
+# Sit or Live (앉거나 살거나)
+
+> **Weather-based theme changer + Developer health manager**
+
+A Tauri-based desktop application that automatically switches IDE/terminal themes based on weather and monitors developer health to prevent sedentary lifestyle issues.
+
+## 🎯 Project Status
+
+**Current Implementation**: Minimal Viable Product (MVP)  
+**Phase**: Phase 1 Complete - Environment Setup  
+**Next**: Phase 2 - Core Implementation
+
+### What's Built
+
+✅ **Phase 1: Environment Setup**
+- Project structure and configuration
+- Tauri + React + TypeScript setup
+- Supabase database schema
+- Build system configuration
+- Git security measures
+
+✅ **Minimal App**
+- Basic weather fetching from Open-Meteo API
+- Weather-to-theme mapping (6 Halloween themes)
+- Simple UI with location and weather display
+- Tauri backend with placeholder commands
+
+### What's Planned (Full Implementation)
+
+The complete project includes **15 desktop features + 4 web dashboard features**:
+
+**Desktop App Features**:
+1. Weather-based theme switching (6 themes × 7 platforms)
+2. Multi-platform theme application (Kiro, VS Code, iTerm2, Warp, Kitty, Hyper, Terminal)
+3. Activity monitoring (keyboard/mouse tracking)
+4. Zombie warnings (30-min idle threshold)
+5. Eye health (20-20-20 rule)
+6. Location management (30 built-in cities + search)
+7. Discord integration
+8. macOS dark mode toggle
+9. Dual timer system (Rust + JavaScript)
+10. Activity intensity visualization
+11. Eye strain calculation
+12. Always on top
+13. Multi-language (English/Korean)
+14. Log management
+15. Kiro integration (hooks, MCP, steering)
+
+**Web Dashboard Features**:
+1. Global theme statistics (real-time)
+2. Activity heatmap (interactive map)
+3. Interactive theme demo
+4. Responsive design
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 20.x
+- Rust 1.70+
+- macOS (for full features) / Windows / Linux
+
+### Installation
+
+```bash
+# Clone repository
+git clone https://github.com/yourusername/sit-or-live.git
+cd sit-or-live
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run tauri:dev
+```
+
+### Build
+
+```bash
+# Build for production
+npm run tauri:build
+
+# Output: src-tauri/target/release/bundle/
+```
+
+## 📚 Documentation
+
+Complete reconstruction documentation is available in `docs/refact/`:
+
+- **00_README.md** - Overview and reading order
+- **00_REBUILD_INSTRUCTIONS.md** - Complete rebuild guide
+- **01-21** - Detailed specifications for each phase
+
+### Reading Order
+
+1. Phase 0: Understanding (docs 01-03)
+2. Phase 1: Environment Setup (docs 04-06) ✅ **COMPLETE**
+3. Phase 2: Core Implementation (docs 07-12)
+4. Phase 3: Integration (docs 13-15)
+5. Phase 4: Quality Assurance (docs 16-18)
+6. Phase 5: Finalization (docs 19-21)
+
+## 🏗️ Architecture
+
+```
+sit-or-live/
+├── src/                    # React frontend
+│   ├── App.tsx            # Main component
+│   ├── App.css            # Styles
+│   └── main.tsx           # Entry point
+├── src-tauri/             # Rust backend
+│   ├── src/
+│   │   ├── main.rs        # Entry point
+│   │   └── lib.rs         # Core commands
+│   ├── Cargo.toml         # Rust dependencies
+│   └── tauri.conf.json    # Tauri configuration
+├── supabase/              # Database
+│   ├── config.toml        # Supabase config
+│   └── migrations/        # SQL migrations
+└── docs/refact/           # Complete documentation
+```
+
+## 🛠️ Technology Stack
+
+- **Frontend**: React 18 + TypeScript 5 + Vite 5
+- **Backend**: Tauri 2.9 (Rust)
+- **Database**: Supabase (PostgreSQL + Realtime)
+- **APIs**: Open-Meteo (weather), Discord (webhooks)
+- **Deployment**: GitHub Actions + Vercel
+
+## 🎨 Themes
+
+Six Halloween-themed color schemes:
+
+1. ☀️ **Daylight Survivor** - Clear weather
+2. 🌙 **Vampire Night** - Cloudy
+3. 🌫️ **Silent Hill** - Foggy
+4. 🌧️ **Rainy Cemetery** - Rainy
+5. ❄️ **Frozen Dead** - Snowy
+6. ⛈️ **Frankenstein Lab** - Stormy
+
+## 🔐 Security
+
+- **No personal data** leaves your device
+- **Anonymous aggregates** only (city-level)
+- **GDPR compliant** by design
+- **Pre-commit hooks** prevent secret leaks
+
+## 📝 License
+
+MIT License - See LICENSE file for details
+
+## 🤝 Contributing
+
+This project was created for the Kiroween Hackathon. Contributions welcome!
+
+1. Fork the repository
+2. Create a feature branch
+3. Follow the documentation in `docs/refact/`
+4. Submit a pull request
+
+## 🙏 Acknowledgments
+
+- **Kiro IDE** - For the hackathon and amazing tools
+- **Tauri** - For the lightweight desktop framework
+- **Open-Meteo** - For free weather API
+- **Supabase** - For real-time database
+
+## 📧 Contact
+
+For questions or feedback, please open an issue on GitHub.
+
+---
+
+**Built with ❤️ for the Kiroween Hackathon**
