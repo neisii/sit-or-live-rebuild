@@ -8,6 +8,7 @@ import { startEyeHealthMonitoring, stopEyeHealthMonitoring, getEyeHealthSettings
 import { WelcomeTooltip } from './components/WelcomeTooltip';
 import { ZombieWarning } from './components/ZombieWarning';
 import { EyeBreakReminder } from './components/EyeBreakReminder';
+import { Language, getCurrentLanguage, setCurrentLanguage, getTranslations } from './i18n/translations';
 
 interface WeatherData {
   temperature: number;
@@ -33,6 +34,14 @@ function App() {
   const [showEyeBreak, setShowEyeBreak] = useState(false);
   const [showWelcomeTooltip, setShowWelcomeTooltip] = useState(false);
   const [halloweenCharacter, setHalloweenCharacter] = useState(getRandomHalloweenCharacter());
+  const [currentLanguage, setLanguage] = useState<Language>(getCurrentLanguage());
+  
+  const t = getTranslations(currentLanguage);
+
+  const handleLanguageChange = (lang: Language) => {
+    setLanguage(lang);
+    setCurrentLanguage(lang);
+  };
 
   // Initial load
   useEffect(() => {
@@ -183,8 +192,27 @@ function App() {
       
       <div className="container">
       <div className="header">
-        <h1 className="title">🧟 Sit or Live</h1>
-        <p className="subtitle">Stay healthy while coding</p>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+          <div>
+            <h1 className="title">{t.appTitle}</h1>
+            <p className="subtitle">{t.appSlogan}</p>
+          </div>
+          <select
+            value={currentLanguage}
+            onChange={(e) => handleLanguageChange(e.target.value as Language)}
+            style={{
+              padding: '0.5rem',
+              borderRadius: '4px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              color: 'white',
+              cursor: 'pointer',
+            }}
+          >
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+          </select>
+        </div>
       </div>
 
       {loading && (
@@ -197,7 +225,7 @@ function App() {
 
       {/* Location Search */}
       <div className="section">
-        <h2 className="section-title">📍 Location</h2>
+        <h2 className="section-title">{t.locationTitle}</h2>
         {location && (
           <p style={{ marginBottom: '0.75rem' }}>
             <strong>{location.name}, {location.country}</strong>
@@ -208,13 +236,13 @@ function App() {
           <input
             type="text"
             className="input"
-            placeholder="Search city..."
+            placeholder={t.locationPlaceholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
           />
           <button className="button" onClick={handleSearch}>
-            Search
+            {t.searchButton}
           </button>
         </div>
         
@@ -276,24 +304,24 @@ function App() {
 
       {/* Health Monitoring */}
       <div className="section">
-        <h2 className="section-title">💪 Health Monitoring</h2>
+        <h2 className="section-title">{t.healthTitle}</h2>
         {healthStats ? (
           <div className="stats-grid">
             <div className="stat-card">
-              <div className="stat-label">Idle Time</div>
+              <div className="stat-label">{t.idleTime}</div>
               <div className="stat-value">{formatTime(healthStats.idleTime)}</div>
             </div>
             <div className="stat-card">
-              <div className="stat-label">Activity</div>
+              <div className="stat-label">{t.activityLevel}</div>
               <div className="stat-value">{Math.round(healthStats.activityLevel * 100)}%</div>
             </div>
             <div className="stat-card">
-              <div className="stat-label">Session</div>
+              <div className="stat-label">{t.sessionDuration}</div>
               <div className="stat-value">{formatTime(healthStats.sessionDuration)}</div>
             </div>
             {eyeHealthStats && (
               <div className="stat-card">
-                <div className="stat-label">Eye Strain</div>
+                <div className="stat-label">{t.eyeStrain}</div>
                 <div className="stat-value">{Math.round(eyeHealthStats.eyeStrain)}%</div>
               </div>
             )}
@@ -307,7 +335,7 @@ function App() {
 
       {/* About */}
       <div className="section">
-        <h2 className="section-title">ℹ️ About</h2>
+        <h2 className="section-title">{t.aboutTitle}</h2>
         <p style={{ fontSize: '0.875rem', opacity: 0.7 }}>
           This is an enhanced implementation with core features. Full version includes:
         </p>
