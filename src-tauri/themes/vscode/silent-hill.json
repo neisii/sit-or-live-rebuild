@@ -1,0 +1,37 @@
+{
+  "name": "Silent Hill",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#2F4F4F",
+    "editor.foreground": "#C0C0C0",
+    "activityBar.background": "#696969",
+    "activityBar.foreground": "#FFFFFF",
+    "sideBar.background": "#3A3A3A",
+    "sideBar.foreground": "#C0C0C0",
+    "statusBar.background": "#808080",
+    "statusBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#696969",
+    "titleBar.activeForeground": "#FFFFFF"
+  },
+  "tokenColors": [
+    {
+      "scope": ["comment"],
+      "settings": {
+        "foreground": "#A9A9A9",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": ["keyword", "storage"],
+      "settings": {
+        "foreground": "#D3D3D3"
+      }
+    },
+    {
+      "scope": ["string"],
+      "settings": {
+        "foreground": "#B0B0B0"
+      }
+    }
+  ]
+}

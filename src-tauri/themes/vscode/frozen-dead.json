@@ -1,0 +1,37 @@
+{
+  "name": "Frozen Dead",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#1A1A2E",
+    "editor.foreground": "#E0FFFF",
+    "activityBar.background": "#B0E0E6",
+    "activityBar.foreground": "#000000",
+    "sideBar.background": "#252538",
+    "sideBar.foreground": "#E0FFFF",
+    "statusBar.background": "#ADD8E6",
+    "statusBar.foreground": "#000000",
+    "titleBar.activeBackground": "#B0E0E6",
+    "titleBar.activeForeground": "#000000"
+  },
+  "tokenColors": [
+    {
+      "scope": ["comment"],
+      "settings": {
+        "foreground": "#87CEEB",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": ["keyword", "storage"],
+      "settings": {
+        "foreground": "#B0E0E6"
+      }
+    },
+    {
+      "scope": ["string"],
+      "settings": {
+        "foreground": "#ADD8E6"
+      }
+    }
+  ]
+}

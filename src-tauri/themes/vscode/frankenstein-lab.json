@@ -1,0 +1,37 @@
+{
+  "name": "Frankenstein Lab",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#0F0F1E",
+    "editor.foreground": "#E0E0FF",
+    "activityBar.background": "#9370DB",
+    "activityBar.foreground": "#FFFFFF",
+    "sideBar.background": "#1A1A2E",
+    "sideBar.foreground": "#E0E0FF",
+    "statusBar.background": "#8A2BE2",
+    "statusBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#9370DB",
+    "titleBar.activeForeground": "#FFFFFF"
+  },
+  "tokenColors": [
+    {
+      "scope": ["comment"],
+      "settings": {
+        "foreground": "#BA55D3",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": ["keyword", "storage"],
+      "settings": {
+        "foreground": "#9370DB"
+      }
+    },
+    {
+      "scope": ["string"],
+      "settings": {
+        "foreground": "#FF00FF"
+      }
+    }
+  ]
+}

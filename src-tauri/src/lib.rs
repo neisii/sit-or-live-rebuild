@@ -1,6 +1,8 @@
 use tauri::Manager;
 use std::process::Command;
 
+mod theme_manager;
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -109,18 +111,14 @@ fn get_dark_mode() -> Result<bool, String> {
 fn apply_theme(theme_name: String, ide: String, terminal: String) -> Result<(), String> {
     println!("Applying theme: {} to IDE: {}, Terminal: {}", theme_name, ide, terminal);
     
-    // Placeholder - in full implementation, this would:
-    // 1. Load theme file from embedded resources
-    // 2. Write to appropriate config file based on IDE/terminal
-    // 3. Handle platform-specific paths
-    
-    // For now, just log
+    // Apply to IDE
     if !ide.is_empty() {
-        println!("Would apply {} theme to {} IDE", theme_name, ide);
+        theme_manager::apply_theme_to_ide(&theme_name, &ide)?;
     }
     
+    // Apply to terminal
     if !terminal.is_empty() {
-        println!("Would apply {} theme to {} terminal", theme_name, terminal);
+        theme_manager::apply_theme_to_terminal(&theme_name, &terminal)?;
     }
     
     Ok(())

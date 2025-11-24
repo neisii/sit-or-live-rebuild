@@ -1,0 +1,14 @@
+{
+  "name": "Frankenstein Lab",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#0F0F1E",
+    "editor.foreground": "#E0E0FF",
+    "activityBar.background": "#9370DB",
+    "activityBar.foreground": "#FFFFFF",
+    "sideBar.background": "#1A1A2E",
+    "sideBar.foreground": "#E0E0FF",
+    "statusBar.background": "#8A2BE2",
+    "statusBar.foreground": "#FFFFFF"
+  }
+}
