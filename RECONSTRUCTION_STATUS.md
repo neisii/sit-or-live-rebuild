@@ -10,11 +10,11 @@
 |-------|--------|------------|------------|
 | Phase 0: Understanding | ✅ Complete | 100% | 30 min |
 | Phase 1: Environment Setup | ✅ Complete | 100% | 45 min |
-| Phase 2: Core Implementation | 🟡 In Progress | 40% | 1h 30min |
+| Phase 2: Core Implementation | 🟡 In Progress | 55% | 2h 15min |
 | Phase 3: Integration | ⏸️ Pending | 0% | - |
 | Phase 4: Quality Assurance | ⏸️ Pending | 0% | - |
 | Phase 5: Finalization | ⏸️ Pending | 0% | - |
-| **Total** | **🟡 In Progress** | **~40%** | **2h 45min** |
+| **Total** | **🟡 In Progress** | **~55%** | **3h 30min** |
 
 ## ✅ What's Been Completed
 
@@ -108,10 +108,15 @@
 - ✅ Session duration tracking
 - ✅ Enhanced UI with search functionality
 
-**What's Missing (60%)**:
-- ❌ Full App.tsx with all state management
-- ❌ Service layer (weatherService, themeService, healthService, etc.)
-- ❌ Components (WelcomeTooltip, ZombieWarning, EyeBreakReminder)
+**Components Implemented**:
+- ✅ WelcomeTooltip.tsx - First-run guide with animations
+- ✅ ZombieWarning.tsx - Idle warning modal (auto-close 10s)
+- ✅ EyeBreakReminder.tsx - 20-20-20 rule reminder with countdown
+
+**What's Missing (45%)**:
+- ✅ Full App.tsx with state management
+- ✅ Service layer (5 services complete)
+- ✅ Components (3 components complete)
 - ❌ Rust backend implementation (idle time, dark mode, theme manager)
 - ❌ Theme files (42 presets for 7 platforms)
 - ❌ Activity monitoring
