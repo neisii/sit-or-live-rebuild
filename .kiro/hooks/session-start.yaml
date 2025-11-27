@@ -1,0 +1,29 @@
+name: Session Start - Sit or Live
+description: Welcomes user and provides quick start info for Sit or Live project
+trigger: on_session_start
+action:
+  type: message
+  content: |
+    🎃 Welcome to Sit or Live! 
+    
+    **Quick Start Commands:**
+    ```bash
+    npm run tauri:dev        # Start desktop app
+    npm run generate-themes  # Regenerate theme files
+    npm run build           # Build frontend
+    npm run tauri:build     # Build desktop app
+    ```
+    
+    **Project Status:** 90% Complete ✅
+    - 42 theme files (6 themes × 7 platforms)
+    - Multi-language support (EN/KO)
+    - Health monitoring active
+    - Discord integration ready
+    
+    **Documentation:**
+    - `docs/refact/` - 21 specification files
+    - `NEXT_STEPS.md` - Remaining work
+    - `PROJECT_STATUS_FINAL.md` - Complete overview
+    
+    Happy coding! 🚀
+enabled: true

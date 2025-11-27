@@ -1,0 +1,27 @@
+name: Weather Check & Theme Update
+description: Checks weather and updates theme when user mentions weather
+trigger: on_message
+condition: |
+  message.toLowerCase().includes('weather') || 
+  message.toLowerCase().includes('theme') ||
+  message.toLowerCase().includes('날씨')
+action:
+  type: message
+  content: |
+    I'll check the weather and update your theme! 🌤️
+    
+    The Sit or Live app automatically:
+    - Fetches weather from Open-Meteo API
+    - Maps weather to one of 6 Halloween themes
+    - Applies theme to your IDE and terminal
+    
+    Current themes:
+    ☀️ Daylight Survivor (clear)
+    🌙 Vampire Night (cloudy)
+    🌫️ Silent Hill (foggy)
+    🌧️ Rainy Cemetery (rainy)
+    ❄️ Frozen Dead (snowy)
+    ⛈️ Frankenstein Lab (stormy)
+    
+    Run `npm run tauri:dev` to start the app!
+enabled: true

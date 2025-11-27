@@ -1,0 +1,26 @@
+name: Health Monitor Reminder
+description: Reminds developer to take breaks when saving code files
+trigger: on_save
+condition: |
+  file.endsWith('.ts') || 
+  file.endsWith('.tsx') || 
+  file.endsWith('.rs') ||
+  file.endsWith('.js') ||
+  file.endsWith('.jsx')
+action:
+  type: message
+  content: |
+    💪 Great work! Remember to take care of yourself:
+    
+    👀 **20-20-20 Rule**: Every 20 minutes, look at something 20 feet away for 20 seconds
+    🧟 **Zombie Warning**: Stand up and move every 30 minutes
+    💧 **Hydration**: Drink water regularly
+    
+    The Sit or Live app monitors:
+    - Idle time (keyboard/mouse activity)
+    - Session duration
+    - Eye strain levels
+    - Activity intensity
+    
+    Keep coding, but stay healthy! 🎃
+enabled: true
