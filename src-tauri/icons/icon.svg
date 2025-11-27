@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#FF6B35" rx="180"/>
+  
+  <!-- Letter "S" for Sit or Live -->
+  <g fill="#FFFFFF">
+    <!-- Top horizontal bar -->
+    <rect x="212" y="212" width="600" height="150" rx="20"/>
+    
+    <!-- Top vertical bar (left) -->
+    <rect x="212" y="212" width="150" height="400" rx="20"/>
+    
+    <!-- Middle horizontal bar -->
+    <rect x="212" y="437" width="600" height="150" rx="20"/>
+    
+    <!-- Bottom vertical bar (right) -->
+    <rect x="662" y="437" width="150" height="400" rx="20"/>
+    
+    <!-- Bottom horizontal bar -->
+    <rect x="212" y="662" width="600" height="150" rx="20"/>
+  </g>
+  
+  <!-- Small accent - zombie emoji style -->
+  <circle cx="850" cy="200" r="80" fill="#8B4513"/>
+  <circle cx="830" cy="180" r="15" fill="#FFFFFF"/>
+  <circle cx="870" cy="180" r="15" fill="#FFFFFF"/>
+  <circle cx="835" cy="185" r="8" fill="#000000"/>
+  <circle cx="865" cy="185" r="8" fill="#000000"/>
+</svg>
