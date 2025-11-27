@@ -1,4 +1,4 @@
-import { expect, afterEach, vi } from 'vitest';
+import { vi } from 'vitest';
 
 // Mock Tauri API
 vi.mock('@tauri-apps/api/core', () => ({
