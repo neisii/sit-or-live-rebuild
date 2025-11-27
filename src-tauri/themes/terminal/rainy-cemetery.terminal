@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>Sit or Live - Rainy Cemetery</string>
+  <key>BackgroundColor</key>
+  <data>HBwu</data>
+  <key>TextColor</key>
+  <data>oKCw</data>
+  <key>ANSIBlackColor</key>
+  <data>HBwu</data>
+  <key>ANSIRedColor</key>
+  <data>/2tr</data>
+  <key>ANSIGreenColor</key>
+  <data>mNjI</data>
+  <key>ANSIYellowColor</key>
+  <data>/9cA</data>
+  <key>ANSIBlueColor</key>
+  <data>RoK0</data>
+  <key>ANSIMagentaColor</key>
+  <data>k3Db</data>
+  <key>ANSICyanColor</key>
+  <data>ZJXt</data>
+  <key>ANSIWhiteColor</key>
+  <data>oKCw</data>
+</dict>
+</plist>

@@ -1,19 +1,45 @@
-use tauri::Manager;
 use std::process::Command;
+use log::info;
 
 mod theme_manager;
+mod analytics;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+    // Load .env file if it exists
+    if let Err(e) = dotenv::dotenv() {
+        info!("dotenv: {:?} (using default local Supabase)", e);
+    } else {
+        info!("dotenv: loaded .env file successfully");
+    }
+
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
         .plugin(tauri_plugin_dialog::init())
+        .plugin(
+            tauri_plugin_log::Builder::default()
+                .targets([
+                    tauri_plugin_log::Target::new(tauri_plugin_log::TargetKind::Stdout),
+                    tauri_plugin_log::Target::new(tauri_plugin_log::TargetKind::LogDir {
+                        file_name: Some("sit-or-live".to_string()),
+                    }),
+                ])
+                .level(log::LevelFilter::Info)
+                .max_file_size(5_000_000)
+                .build(),
+        )
         .invoke_handler(tauri::generate_handler![
             get_idle_time,
             set_dark_mode,
             get_dark_mode,
-            apply_theme
+            apply_theme,
+            analytics::report_theme_change,
+            analytics::report_activity
         ])
+        .setup(|_app| {
+            info!("Sit or Live app started");
+            Ok(())
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

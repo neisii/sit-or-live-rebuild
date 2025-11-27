@@ -1,0 +1,24 @@
+name: Sit or Live - Frozen Dead
+background: '#1A1A2E'
+foreground: '#B0E0E6'
+details: darker
+accent: '#ADD8E6'
+terminal_colors:
+  normal:
+    black: '#1A1A2E'
+    red: '#FF6B6B'
+    green: '#98FB98'
+    yellow: '#FFE4B5'
+    blue: '#ADD8E6'
+    magenta: '#B0C4DE'
+    cyan: '#87CEEB'
+    white: '#B0E0E6'
+  bright:
+    black: '#4A4A5E'
+    red: '#FF6B6B'
+    green: '#98FB98'
+    yellow: '#FFE4B5'
+    blue: '#ADD8E6'
+    magenta: '#B0C4DE'
+    cyan: '#87CEEB'
+    white: '#F0FFFF'

@@ -1,0 +1,24 @@
+name: Sit or Live - Daylight Survivor
+background: '#FFF8DC'
+foreground: '#654321'
+details: darker
+accent: '#1E90FF'
+terminal_colors:
+  normal:
+    black: '#FFF8DC'
+    red: '#FF6347'
+    green: '#32CD32'
+    yellow: '#FFD700'
+    blue: '#1E90FF'
+    magenta: '#9370DB'
+    cyan: '#00CED1'
+    white: '#654321'
+  bright:
+    black: '#D2691E'
+    red: '#FF6347'
+    green: '#32CD32'
+    yellow: '#FFD700'
+    blue: '#1E90FF'
+    magenta: '#9370DB'
+    cyan: '#00CED1'
+    white: '#1C0A00'

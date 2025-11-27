@@ -1,14 +1,65 @@
 {
-  "name": "Frankenstein Lab",
+  "name": "Sit or Live - Frankenstein Lab",
   "type": "dark",
   "colors": {
     "editor.background": "#0F0F1E",
-    "editor.foreground": "#E0E0FF",
-    "activityBar.background": "#9370DB",
-    "activityBar.foreground": "#FFFFFF",
+    "editor.foreground": "#D8BFD8",
+    "editorCursor.foreground": "#D8BFD8",
+    "editor.lineHighlightBackground": "#1A1A2E",
+    "editor.selectionBackground": "#252538",
     "sideBar.background": "#1A1A2E",
-    "sideBar.foreground": "#E0E0FF",
-    "statusBar.background": "#8A2BE2",
-    "statusBar.foreground": "#FFFFFF"
-  }
+    "activityBar.background": "#1A1A2E",
+    "statusBar.background": "#252538",
+    "terminal.ansiBlack": "#0F0F1E",
+    "terminal.ansiRed": "#FF00FF",
+    "terminal.ansiGreen": "#00FF00",
+    "terminal.ansiYellow": "#FFD700",
+    "terminal.ansiBlue": "#8A2BE2",
+    "terminal.ansiMagenta": "#9370DB",
+    "terminal.ansiCyan": "#00FFFF",
+    "terminal.ansiWhite": "#D8BFD8"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "comment"
+      ],
+      "settings": {
+        "foreground": "#4A4A5E"
+      }
+    },
+    {
+      "scope": [
+        "string"
+      ],
+      "settings": {
+        "foreground": "#00FF00"
+      }
+    },
+    {
+      "scope": [
+        "keyword",
+        "storage"
+      ],
+      "settings": {
+        "foreground": "#9370DB"
+      }
+    },
+    {
+      "scope": [
+        "function"
+      ],
+      "settings": {
+        "foreground": "#8A2BE2"
+      }
+    },
+    {
+      "scope": [
+        "variable"
+      ],
+      "settings": {
+        "foreground": "#FF00FF"
+      }
+    }
+  ]
 }

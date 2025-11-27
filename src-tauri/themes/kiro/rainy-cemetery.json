@@ -1,14 +1,65 @@
 {
-  "name": "Rainy Cemetery",
+  "name": "Sit or Live - Rainy Cemetery",
   "type": "dark",
   "colors": {
     "editor.background": "#1C1C2E",
-    "editor.foreground": "#B0C4DE",
-    "activityBar.background": "#4682B4",
-    "activityBar.foreground": "#FFFFFF",
+    "editor.foreground": "#A0A0B0",
+    "editorCursor.foreground": "#A0A0B0",
+    "editor.lineHighlightBackground": "#252538",
+    "editor.selectionBackground": "#2E2E42",
     "sideBar.background": "#252538",
-    "sideBar.foreground": "#B0C4DE",
-    "statusBar.background": "#5F9EA0",
-    "statusBar.foreground": "#FFFFFF"
-  }
+    "activityBar.background": "#252538",
+    "statusBar.background": "#2E2E42",
+    "terminal.ansiBlack": "#1C1C2E",
+    "terminal.ansiRed": "#FF6B6B",
+    "terminal.ansiGreen": "#98D8C8",
+    "terminal.ansiYellow": "#FFD700",
+    "terminal.ansiBlue": "#4682B4",
+    "terminal.ansiMagenta": "#9370DB",
+    "terminal.ansiCyan": "#6495ED",
+    "terminal.ansiWhite": "#A0A0B0"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "comment"
+      ],
+      "settings": {
+        "foreground": "#4A4A5E"
+      }
+    },
+    {
+      "scope": [
+        "string"
+      ],
+      "settings": {
+        "foreground": "#98D8C8"
+      }
+    },
+    {
+      "scope": [
+        "keyword",
+        "storage"
+      ],
+      "settings": {
+        "foreground": "#9370DB"
+      }
+    },
+    {
+      "scope": [
+        "function"
+      ],
+      "settings": {
+        "foreground": "#4682B4"
+      }
+    },
+    {
+      "scope": [
+        "variable"
+      ],
+      "settings": {
+        "foreground": "#FF6B6B"
+      }
+    }
+  ]
 }

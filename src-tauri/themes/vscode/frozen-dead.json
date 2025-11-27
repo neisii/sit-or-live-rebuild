@@ -1,36 +1,64 @@
 {
-  "name": "Frozen Dead",
+  "name": "Sit or Live - Frozen Dead",
   "type": "dark",
   "colors": {
     "editor.background": "#1A1A2E",
-    "editor.foreground": "#E0FFFF",
-    "activityBar.background": "#B0E0E6",
-    "activityBar.foreground": "#000000",
-    "sideBar.background": "#252538",
-    "sideBar.foreground": "#E0FFFF",
-    "statusBar.background": "#ADD8E6",
-    "statusBar.foreground": "#000000",
-    "titleBar.activeBackground": "#B0E0E6",
-    "titleBar.activeForeground": "#000000"
+    "editor.foreground": "#B0E0E6",
+    "editorCursor.foreground": "#B0E0E6",
+    "editor.lineHighlightBackground": "#232338",
+    "editor.selectionBackground": "#2C2C42",
+    "sideBar.background": "#232338",
+    "activityBar.background": "#232338",
+    "statusBar.background": "#2C2C42",
+    "terminal.ansiBlack": "#1A1A2E",
+    "terminal.ansiRed": "#FF6B6B",
+    "terminal.ansiGreen": "#98FB98",
+    "terminal.ansiYellow": "#FFE4B5",
+    "terminal.ansiBlue": "#ADD8E6",
+    "terminal.ansiMagenta": "#B0C4DE",
+    "terminal.ansiCyan": "#87CEEB",
+    "terminal.ansiWhite": "#B0E0E6"
   },
   "tokenColors": [
     {
-      "scope": ["comment"],
+      "scope": [
+        "comment"
+      ],
       "settings": {
-        "foreground": "#87CEEB",
-        "fontStyle": "italic"
+        "foreground": "#4A4A5E"
       }
     },
     {
-      "scope": ["keyword", "storage"],
+      "scope": [
+        "string"
+      ],
       "settings": {
-        "foreground": "#B0E0E6"
+        "foreground": "#98FB98"
       }
     },
     {
-      "scope": ["string"],
+      "scope": [
+        "keyword",
+        "storage"
+      ],
+      "settings": {
+        "foreground": "#B0C4DE"
+      }
+    },
+    {
+      "scope": [
+        "function"
+      ],
       "settings": {
         "foreground": "#ADD8E6"
+      }
+    },
+    {
+      "scope": [
+        "variable"
+      ],
+      "settings": {
+        "foreground": "#FF6B6B"
       }
     }
   ]

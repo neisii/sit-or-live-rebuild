@@ -1,42 +1,64 @@
 {
-  "name": "Daylight Survivor",
+  "name": "Sit or Live - Daylight Survivor",
   "type": "light",
   "colors": {
     "editor.background": "#FFF8DC",
-    "editor.foreground": "#2F4F4F",
-    "activityBar.background": "#FFD700",
-    "activityBar.foreground": "#2F4F4F",
-    "sideBar.background": "#FFFACD",
-    "sideBar.foreground": "#2F4F4F",
-    "statusBar.background": "#FFA500",
-    "statusBar.foreground": "#2F4F4F",
-    "titleBar.activeBackground": "#FFD700",
-    "titleBar.activeForeground": "#2F4F4F"
+    "editor.foreground": "#654321",
+    "editorCursor.foreground": "#654321",
+    "editor.lineHighlightBackground": "#F5DEB3",
+    "editor.selectionBackground": "#DEB887",
+    "sideBar.background": "#F5DEB3",
+    "activityBar.background": "#F5DEB3",
+    "statusBar.background": "#DEB887",
+    "terminal.ansiBlack": "#FFF8DC",
+    "terminal.ansiRed": "#FF6347",
+    "terminal.ansiGreen": "#32CD32",
+    "terminal.ansiYellow": "#FFD700",
+    "terminal.ansiBlue": "#1E90FF",
+    "terminal.ansiMagenta": "#9370DB",
+    "terminal.ansiCyan": "#00CED1",
+    "terminal.ansiWhite": "#654321"
   },
   "tokenColors": [
     {
-      "scope": ["comment"],
+      "scope": [
+        "comment"
+      ],
       "settings": {
-        "foreground": "#8B7355",
-        "fontStyle": "italic"
+        "foreground": "#D2691E"
       }
     },
     {
-      "scope": ["keyword", "storage"],
+      "scope": [
+        "string"
+      ],
+      "settings": {
+        "foreground": "#32CD32"
+      }
+    },
+    {
+      "scope": [
+        "keyword",
+        "storage"
+      ],
+      "settings": {
+        "foreground": "#9370DB"
+      }
+    },
+    {
+      "scope": [
+        "function"
+      ],
+      "settings": {
+        "foreground": "#1E90FF"
+      }
+    },
+    {
+      "scope": [
+        "variable"
+      ],
       "settings": {
         "foreground": "#FF6347"
-      }
-    },
-    {
-      "scope": ["string"],
-      "settings": {
-        "foreground": "#228B22"
-      }
-    },
-    {
-      "scope": ["variable", "entity.name"],
-      "settings": {
-        "foreground": "#2F4F4F"
       }
     }
   ]

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>Sit or Live - Frankenstein Lab</string>
+  <key>BackgroundColor</key>
+  <data>Dw8e</data>
+  <key>TextColor</key>
+  <data>2L/Y</data>
+  <key>ANSIBlackColor</key>
+  <data>Dw8e</data>
+  <key>ANSIRedColor</key>
+  <data>/wD/</data>
+  <key>ANSIGreenColor</key>
+  <data>AP8A</data>
+  <key>ANSIYellowColor</key>
+  <data>/9cA</data>
+  <key>ANSIBlueColor</key>
+  <data>iivi</data>
+  <key>ANSIMagentaColor</key>
+  <data>k3Db</data>
+  <key>ANSICyanColor</key>
+  <data>AP//</data>
+  <key>ANSIWhiteColor</key>
+  <data>2L/Y</data>
+</dict>
+</plist>

@@ -1,0 +1,24 @@
+name: Sit or Live - Vampire Night
+background: '#0D0D0D'
+foreground: '#CCCCCC'
+details: darker
+accent: '#1E90FF'
+terminal_colors:
+  normal:
+    black: '#0D0D0D'
+    red: '#DC143C'
+    green: '#00FF00'
+    yellow: '#FFD700'
+    blue: '#1E90FF'
+    magenta: '#9400D3'
+    cyan: '#00FFFF'
+    white: '#CCCCCC'
+  bright:
+    black: '#4D4D4D'
+    red: '#DC143C'
+    green: '#00FF00'
+    yellow: '#FFD700'
+    blue: '#1E90FF'
+    magenta: '#9400D3'
+    cyan: '#00FFFF'
+    white: '#FFFFFF'

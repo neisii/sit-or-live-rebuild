@@ -1,0 +1,24 @@
+name: Sit or Live - Frankenstein Lab
+background: '#0F0F1E'
+foreground: '#D8BFD8'
+details: darker
+accent: '#8A2BE2'
+terminal_colors:
+  normal:
+    black: '#0F0F1E'
+    red: '#FF00FF'
+    green: '#00FF00'
+    yellow: '#FFD700'
+    blue: '#8A2BE2'
+    magenta: '#9370DB'
+    cyan: '#00FFFF'
+    white: '#D8BFD8'
+  bright:
+    black: '#4A4A5E'
+    red: '#FF00FF'
+    green: '#00FF00'
+    yellow: '#FFD700'
+    blue: '#8A2BE2'
+    magenta: '#9370DB'
+    cyan: '#00FFFF'
+    white: '#F5EBF5'

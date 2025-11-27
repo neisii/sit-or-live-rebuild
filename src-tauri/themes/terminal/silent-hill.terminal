@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>Sit or Live - Silent Hill</string>
+  <key>BackgroundColor</key>
+  <data>L09P</data>
+  <key>TextColor</key>
+  <data>qamp</data>
+  <key>ANSIBlackColor</key>
+  <data>L09P</data>
+  <key>ANSIRedColor</key>
+  <data>zVxc</data>
+  <key>ANSIGreenColor</key>
+  <data>kO6Q</data>
+  <key>ANSIYellowColor</key>
+  <data>8OaM</data>
+  <key>ANSIBlueColor</key>
+  <data>h87r</data>
+  <key>ANSIMagentaColor</key>
+  <data>3aDd</data>
+  <key>ANSICyanColor</key>
+  <data>r+7u</data>
+  <key>ANSIWhiteColor</key>
+  <data>qamp</data>
+</dict>
+</plist>

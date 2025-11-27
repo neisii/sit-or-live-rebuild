@@ -1,14 +1,65 @@
 {
-  "name": "Vampire Night",
+  "name": "Sit or Live - Vampire Night",
   "type": "dark",
   "colors": {
     "editor.background": "#0D0D0D",
-    "editor.foreground": "#E0E0E0",
-    "activityBar.background": "#8B0000",
-    "activityBar.foreground": "#FFFFFF",
+    "editor.foreground": "#CCCCCC",
+    "editorCursor.foreground": "#CCCCCC",
+    "editor.lineHighlightBackground": "#1A1A1A",
+    "editor.selectionBackground": "#2D2D2D",
     "sideBar.background": "#1A1A1A",
-    "sideBar.foreground": "#E0E0E0",
-    "statusBar.background": "#DC143C",
-    "statusBar.foreground": "#FFFFFF"
-  }
+    "activityBar.background": "#1A1A1A",
+    "statusBar.background": "#2D2D2D",
+    "terminal.ansiBlack": "#0D0D0D",
+    "terminal.ansiRed": "#DC143C",
+    "terminal.ansiGreen": "#00FF00",
+    "terminal.ansiYellow": "#FFD700",
+    "terminal.ansiBlue": "#1E90FF",
+    "terminal.ansiMagenta": "#9400D3",
+    "terminal.ansiCyan": "#00FFFF",
+    "terminal.ansiWhite": "#CCCCCC"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "comment"
+      ],
+      "settings": {
+        "foreground": "#4D4D4D"
+      }
+    },
+    {
+      "scope": [
+        "string"
+      ],
+      "settings": {
+        "foreground": "#00FF00"
+      }
+    },
+    {
+      "scope": [
+        "keyword",
+        "storage"
+      ],
+      "settings": {
+        "foreground": "#9400D3"
+      }
+    },
+    {
+      "scope": [
+        "function"
+      ],
+      "settings": {
+        "foreground": "#1E90FF"
+      }
+    },
+    {
+      "scope": [
+        "variable"
+      ],
+      "settings": {
+        "foreground": "#DC143C"
+      }
+    }
+  ]
 }

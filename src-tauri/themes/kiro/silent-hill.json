@@ -1,14 +1,65 @@
 {
-  "name": "Silent Hill",
+  "name": "Sit or Live - Silent Hill",
   "type": "dark",
   "colors": {
     "editor.background": "#2F4F4F",
-    "editor.foreground": "#C0C0C0",
-    "activityBar.background": "#696969",
-    "activityBar.foreground": "#FFFFFF",
-    "sideBar.background": "#3A3A3A",
-    "sideBar.foreground": "#C0C0C0",
-    "statusBar.background": "#808080",
-    "statusBar.foreground": "#FFFFFF"
-  }
+    "editor.foreground": "#A9A9A9",
+    "editorCursor.foreground": "#A9A9A9",
+    "editor.lineHighlightBackground": "#3C5A5A",
+    "editor.selectionBackground": "#4A6565",
+    "sideBar.background": "#3C5A5A",
+    "activityBar.background": "#3C5A5A",
+    "statusBar.background": "#4A6565",
+    "terminal.ansiBlack": "#2F4F4F",
+    "terminal.ansiRed": "#CD5C5C",
+    "terminal.ansiGreen": "#90EE90",
+    "terminal.ansiYellow": "#F0E68C",
+    "terminal.ansiBlue": "#87CEEB",
+    "terminal.ansiMagenta": "#DDA0DD",
+    "terminal.ansiCyan": "#AFEEEE",
+    "terminal.ansiWhite": "#A9A9A9"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "comment"
+      ],
+      "settings": {
+        "foreground": "#708090"
+      }
+    },
+    {
+      "scope": [
+        "string"
+      ],
+      "settings": {
+        "foreground": "#90EE90"
+      }
+    },
+    {
+      "scope": [
+        "keyword",
+        "storage"
+      ],
+      "settings": {
+        "foreground": "#DDA0DD"
+      }
+    },
+    {
+      "scope": [
+        "function"
+      ],
+      "settings": {
+        "foreground": "#87CEEB"
+      }
+    },
+    {
+      "scope": [
+        "variable"
+      ],
+      "settings": {
+        "foreground": "#CD5C5C"
+      }
+    }
+  ]
 }

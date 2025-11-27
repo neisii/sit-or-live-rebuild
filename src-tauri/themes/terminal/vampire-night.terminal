@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>Sit or Live - Vampire Night</string>
+  <key>BackgroundColor</key>
+  <data>DQ0N</data>
+  <key>TextColor</key>
+  <data>zMzM</data>
+  <key>ANSIBlackColor</key>
+  <data>DQ0N</data>
+  <key>ANSIRedColor</key>
+  <data>3BQ8</data>
+  <key>ANSIGreenColor</key>
+  <data>AP8A</data>
+  <key>ANSIYellowColor</key>
+  <data>/9cA</data>
+  <key>ANSIBlueColor</key>
+  <data>HpD/</data>
+  <key>ANSIMagentaColor</key>
+  <data>lADT</data>
+  <key>ANSICyanColor</key>
+  <data>AP//</data>
+  <key>ANSIWhiteColor</key>
+  <data>zMzM</data>
+</dict>
+</plist>

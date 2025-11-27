@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>Sit or Live - Daylight Survivor</string>
+  <key>BackgroundColor</key>
+  <data>//jc</data>
+  <key>TextColor</key>
+  <data>ZUMh</data>
+  <key>ANSIBlackColor</key>
+  <data>//jc</data>
+  <key>ANSIRedColor</key>
+  <data>/2NH</data>
+  <key>ANSIGreenColor</key>
+  <data>Ms0y</data>
+  <key>ANSIYellowColor</key>
+  <data>/9cA</data>
+  <key>ANSIBlueColor</key>
+  <data>HpD/</data>
+  <key>ANSIMagentaColor</key>
+  <data>k3Db</data>
+  <key>ANSICyanColor</key>
+  <data>AM7R</data>
+  <key>ANSIWhiteColor</key>
+  <data>ZUMh</data>
+</dict>
+</plist>
