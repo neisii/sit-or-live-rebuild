@@ -20,6 +20,12 @@ export interface Translations {
   sessionDuration: string;
   eyeStrain: string;
   
+  // Eye Strain Levels
+  safe: string;
+  ghost: string;
+  zombie: string;
+  danger: string;
+  
   // Settings
   settingsButton: string;
   alwaysOnTop: string;
@@ -57,6 +63,11 @@ const translations: Record<Language, Translations> = {
     sessionDuration: 'Session',
     eyeStrain: 'Eye Strain',
     
+    safe: 'Safe',
+    ghost: 'Ghost',
+    zombie: 'Zombie',
+    danger: 'Danger!',
+    
     settingsButton: '⚙️ Settings',
     alwaysOnTop: 'Always on Top',
     language: 'Language',
@@ -88,6 +99,11 @@ const translations: Record<Language, Translations> = {
     activityLevel: '활동량',
     sessionDuration: '세션',
     eyeStrain: '눈 피로도',
+    
+    safe: '안전',
+    ghost: '유령',
+    zombie: '좀비',
+    danger: '위험!',
     
     settingsButton: '⚙️ 설정',
     alwaysOnTop: '항상 위에',
