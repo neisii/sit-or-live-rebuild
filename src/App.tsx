@@ -8,8 +8,12 @@ import { startEyeHealthMonitoring, stopEyeHealthMonitoring, getEyeHealthSettings
 import { WelcomeTooltip } from './components/WelcomeTooltip';
 import { ZombieWarning } from './components/ZombieWarning';
 import { EyeBreakReminder } from './components/EyeBreakReminder';
+import { SettingsPanel } from './components/SettingsPanel';
+import { HelpPanel } from './components/HelpPanel';
+import { HealthSettingsModal } from './components/HealthSettingsModal';
 import { Language, getCurrentLanguage, setCurrentLanguage, getTranslations } from './i18n/translations';
 import { sendThemeChangeNotification } from './services/discordService';
+import { loadSettings, saveSettings } from './services/settingsService';
 
 interface WeatherData {
   temperature: number;
@@ -40,8 +44,22 @@ function App() {
   const t = getTranslations(currentLanguage);
   
   // UI state for advanced features
-  const [showAppSettings, setShowAppSettings] = useState(false);
-  const [showHealthSettings, setShowHealthSettings] = useState(false);
+  const [showSettingsPanel, setShowSettingsPanel] = useState(false);
+  const [settingsInitialTab, setSettingsInitialTab] = useState<'general' | 'theme' | 'discord' | 'health' | 'logs'>('general');
+  const [showHelpPanel, setShowHelpPanel] = useState(false);
+  const [showHealthSettingsModal, setShowHealthSettingsModal] = useState(false);
+  
+  // Settings state
+  const [selectedIDE, setSelectedIDE] = useState('');
+  const [selectedTerminal, setSelectedTerminal] = useState('');
+  const [discordWebhook, setDiscordWebhook] = useState('');
+  const [discordEnabled, setDiscordEnabled] = useState(false);
+  const [alwaysOnTop, setAlwaysOnTop] = useState(false);
+  
+  // Counters
+  const [zombieCount, setZombieCount] = useState(0);
+  const [breakCount, setBreakCount] = useState(0);
+  const [completedBreaks, setCompletedBreaks] = useState(0);
 
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
@@ -63,6 +81,31 @@ function App() {
     if (strain < 80) return { emoji: '🧟', text: t.zombie || 'Zombie', color: '#f56565', class: 'zombie' };
     return { emoji: '💀', text: t.danger || 'Danger!', color: '#c53030', class: 'danger' };
   };
+
+  // Load settings on mount
+  useEffect(() => {
+    const settings = loadSettings();
+    setSelectedIDE(settings.selectedIDE);
+    setSelectedTerminal(settings.selectedTerminal);
+    setDiscordWebhook(settings.discordWebhook);
+    setDiscordEnabled(settings.enableDiscordNotifications);
+    setAlwaysOnTop(settings.alwaysOnTop);
+  }, []);
+
+  // Save settings when they change
+  useEffect(() => {
+    const settings = loadSettings();
+    settings.selectedIDE = selectedIDE;
+    settings.selectedTerminal = selectedTerminal;
+    settings.discordWebhook = discordWebhook;
+    settings.enableDiscordNotifications = discordEnabled;
+    settings.alwaysOnTop = alwaysOnTop;
+    saveSettings(settings);
+    
+    // Also save to localStorage for theme service
+    localStorage.setItem('selected_ide', selectedIDE);
+    localStorage.setItem('selected_terminal', selectedTerminal);
+  }, [selectedIDE, selectedTerminal, discordWebhook, discordEnabled, alwaysOnTop]);
 
   // Initial load
   useEffect(() => {
@@ -102,6 +145,7 @@ function App() {
         // Zombie warning
         if (settings.enableWarnings) {
           setShowZombieWarning(true);
+          setZombieCount(prev => prev + 1);
         }
       }
     );
@@ -123,6 +167,7 @@ function App() {
       () => {
         setHalloweenCharacter(getRandomHalloweenCharacter());
         setShowEyeBreak(true);
+        setBreakCount(prev => prev + 1);
       },
       () => healthStats?.idleTime || 0
     );
@@ -142,6 +187,7 @@ function App() {
   const handleCompleteBreak = () => {
     completeBreak();
     setShowEyeBreak(false);
+    setCompletedBreaks(prev => prev + 1);
   };
 
   const handleSkipBreak = () => {
@@ -169,13 +215,16 @@ function App() {
         weatherData.weatherCode
       );
 
-      // Send Discord notification
-      await sendThemeChangeNotification(
-        weatherData.theme,
-        loc.name,
-        loc.country,
-        weatherData.weatherDescription
-      );
+      // Send Discord notification if enabled
+      if (discordEnabled && discordWebhook) {
+        await sendThemeChangeNotification(
+          weatherData.theme,
+          loc.name,
+          loc.country,
+          weatherData.weatherDescription,
+          discordWebhook
+        );
+      }
     } catch (err) {
       setError('Failed to load weather data');
       console.error(err);
@@ -222,43 +271,27 @@ function App() {
       <div className="container">
       <div className="header">
         <h1 className="title">sit-or-live 🧟</h1>
-        <p className="subtitle">Sit or Live!</p>
+        <p className="subtitle">{currentLanguage === 'ko' ? '일하면서 건강 지키기!' : 'Stay healthy while working!'}</p>
         
-        {/* Settings button (top right) */}
-        <div 
-          className="settings-button"
-          onMouseEnter={() => setShowAppSettings(true)}
-          onMouseLeave={() => setShowAppSettings(false)}
-          style={{ position: 'relative' }}
-        >
-          ⚙️ App
-          {showAppSettings && (
-            <div style={{
-              position: 'absolute',
-              top: '100%',
-              right: 0,
-              marginTop: '0.25rem',
-              background: '#16213e',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              borderRadius: '4px',
-              padding: '0.5rem',
-              minWidth: '150px',
-              zIndex: 1000,
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)'
-            }}>
-              <div style={{ fontSize: '0.75rem', marginBottom: '0.5rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.25rem' }}>Language:</label>
-                <select
-                  value={currentLanguage}
-                  onChange={(e) => handleLanguageChange(e.target.value as Language)}
-                  style={{ width: '100%' }}
-                >
-                  <option value="en">English</option>
-                  <option value="ko">한국어</option>
-                </select>
-              </div>
-            </div>
-          )}
+        {/* Settings and Help buttons (top right) */}
+        <div style={{ position: 'absolute', top: '0.5rem', right: '0.5rem', display: 'flex', gap: '0.25rem' }}>
+          <button 
+            className="settings-button"
+            onClick={() => {
+              setSettingsInitialTab('general');
+              setShowSettingsPanel(true);
+            }}
+            style={{ position: 'static' }}
+          >
+            ⚙️
+          </button>
+          <button 
+            className="settings-button"
+            onClick={() => setShowHelpPanel(true)}
+            style={{ position: 'static' }}
+          >
+            ❓
+          </button>
         </div>
       </div>
 
@@ -272,12 +305,14 @@ function App() {
 
       {/* Location Search */}
       <div className="section">
-        <h2 className="section-title">📍 Location</h2>
-        {location && (
-          <p style={{ marginBottom: '0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>
-            {location.name}
-          </p>
-        )}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+          <h2 className="section-title" style={{ margin: 0 }}>📍 Location</h2>
+          {location && (
+            <span style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+              {location.name}
+            </span>
+          )}
+        </div>
         
         <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '0.5rem' }}>
           <input
@@ -346,35 +381,31 @@ function App() {
       <div className="section">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
           <h2 className="section-title" style={{ margin: 0 }}>💪 {t.healthTitle}</h2>
-          <div 
-            className="settings-button"
-            onMouseEnter={() => setShowHealthSettings(true)}
-            onMouseLeave={() => setShowHealthSettings(false)}
-            style={{ position: 'relative', fontSize: '0.625rem' }}
+          <button 
+            onClick={() => setShowHealthSettingsModal(true)}
+            style={{ 
+              position: 'static',
+              background: 'var(--bg-card)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '4px',
+              padding: '0.25rem 0.5rem',
+              fontSize: '0.75rem',
+              color: 'var(--text-secondary)',
+              cursor: 'pointer',
+              transition: 'all 0.2s'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.color = 'var(--text-primary)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'var(--bg-card)';
+              e.currentTarget.style.color = 'var(--text-secondary)';
+            }}
+            title="Open Health Settings"
           >
             ⚙️
-            {showHealthSettings && (
-              <div style={{
-                position: 'absolute',
-                top: '100%',
-                right: 0,
-                marginTop: '0.25rem',
-                background: '#16213e',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                borderRadius: '4px',
-                padding: '0.5rem',
-                minWidth: '120px',
-                zIndex: 1000,
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
-                fontSize: '0.75rem'
-              }}>
-                <div>Health Settings</div>
-                <div style={{ fontSize: '0.625rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.25rem' }}>
-                  Coming soon...
-                </div>
-              </div>
-            )}
-          </div>
+          </button>
         </div>
         
         {healthStats ? (
@@ -383,7 +414,7 @@ function App() {
             <div style={{ marginBottom: '0.75rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.25rem' }}>
                 <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.7)' }}>
-                  Activity Intensity
+                  🔥 Activity Intensity
                 </span>
                 <span style={{ fontSize: '0.75rem', fontWeight: 600 }}>
                   {Math.round(healthStats.activityLevel * 100)}%
@@ -412,11 +443,11 @@ function App() {
               </div>
               <div className="stat-card">
                 <div className="stat-label">Zombie Count</div>
-                <div className="stat-value">0</div>
+                <div className="stat-value">{zombieCount}</div>
               </div>
               <div className="stat-card">
-                <div className="stat-label">Break Count</div>
-                <div className="stat-value">0</div>
+                <div className="stat-label">Breaks</div>
+                <div className="stat-value">{completedBreaks}/{breakCount}</div>
               </div>
             </div>
             
@@ -447,6 +478,39 @@ function App() {
         Kiroween Hackathon 2025 | Frankenstein Category
       </div>
     </div>
+    
+    {/* Settings Panel */}
+    {showSettingsPanel && (
+      <SettingsPanel
+        onClose={() => {
+          setShowSettingsPanel(false);
+          setSettingsInitialTab('general'); // Reset to general tab
+        }}
+        currentLanguage={currentLanguage}
+        onLanguageChange={handleLanguageChange}
+        selectedIDE={selectedIDE}
+        onIDEChange={setSelectedIDE}
+        selectedTerminal={selectedTerminal}
+        onTerminalChange={setSelectedTerminal}
+        discordWebhook={discordWebhook}
+        onDiscordWebhookChange={setDiscordWebhook}
+        discordEnabled={discordEnabled}
+        onDiscordEnabledChange={setDiscordEnabled}
+        alwaysOnTop={alwaysOnTop}
+        onAlwaysOnTopChange={setAlwaysOnTop}
+        initialTab={settingsInitialTab}
+      />
+    )}
+    
+    {/* Help Panel */}
+    {showHelpPanel && (
+      <HelpPanel onClose={() => setShowHelpPanel(false)} />
+    )}
+    
+    {/* Health Settings Modal */}
+    {showHealthSettingsModal && (
+      <HealthSettingsModal onClose={() => setShowHealthSettingsModal(false)} />
+    )}
     </>
   );
 }

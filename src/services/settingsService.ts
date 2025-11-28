@@ -106,8 +106,10 @@ export function resetSettings(): void {
 export async function setAlwaysOnTop(enabled: boolean): Promise<void> {
   try {
     const window = getCurrentWindow();
+    // Use the window's built-in method
     await window.setAlwaysOnTop(enabled);
     updateSetting('alwaysOnTop', enabled);
+    console.log('Always on top set to:', enabled);
   } catch (error) {
     console.error('Failed to set always on top:', error);
     throw new Error('Failed to set always on top');

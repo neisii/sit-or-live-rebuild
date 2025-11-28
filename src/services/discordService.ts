@@ -81,8 +81,13 @@ export const sendThemeChangeNotification = async (
   themeName: string,
   city: string,
   country: string,
-  weatherDescription: string
+  weatherDescription: string,
+  webhookUrl?: string
 ): Promise<boolean> => {
+  // Use provided webhook or fall back to stored one
+  const url = webhookUrl || getDiscordWebhookUrl();
+  if (!url) return false;
+  
   const themeEmojis: Record<string, string> = {
     'Daylight Survivor': '☀️',
     'Vampire Night': '🌙',
@@ -94,27 +99,36 @@ export const sendThemeChangeNotification = async (
 
   const emoji = themeEmojis[themeName] || '🎨';
 
-  return sendDiscordNotification({
-    embeds: [
-      {
-        title: `${emoji} Theme Changed`,
-        description: `**${themeName}**`,
-        color: 0x5865f2,
-        fields: [
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        embeds: [
           {
-            name: '📍 Location',
-            value: `${city}, ${country}`,
-            inline: true,
-          },
-          {
-            name: '🌤️ Weather',
-            value: weatherDescription,
-            inline: true,
+            title: `${emoji} Theme Changed`,
+            description: `**${themeName}**`,
+            color: 0x5865f2,
+            fields: [
+              {
+                name: '📍 Location',
+                value: `${city}, ${country}`,
+                inline: true,
+              },
+              {
+                name: '🌤️ Weather',
+                value: weatherDescription,
+                inline: true,
+              },
+            ],
           },
         ],
-      },
-    ],
-  });
+      }),
+    });
+    return response.ok;
+  } catch {
+    return false;
+  }
 };
 
 export const sendHealthWarning = async (
