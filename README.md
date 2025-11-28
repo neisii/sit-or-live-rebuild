@@ -83,7 +83,7 @@ A Tauri-based desktop application that automatically switches IDE/terminal theme
 
 - Node.js 20.x
 - Rust 1.70+
-- macOS (for full features) / Windows / Linux
+- **macOS only** (requires macOS-specific APIs for idle detection and dark mode)
 
 ### Installation
 

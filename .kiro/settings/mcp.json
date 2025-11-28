@@ -1,18 +1,18 @@
 {
   "mcpServers": {
-    "sit-or-live-weather": {
+    "weather": {
       "command": "node",
       "args": ["mcp-servers/weather-server.js"],
       "env": {},
       "disabled": false,
-      "autoApprove": ["get_weather", "get_theme_recommendation"]
+      "autoApprove": ["get_weather", "search_location"]
     },
-    "sit-or-live-discord": {
+    "discord": {
       "command": "node",
       "args": ["mcp-servers/discord-server.js"],
       "env": {},
       "disabled": false,
-      "autoApprove": []
+      "autoApprove": ["send_notification"]
     }
   }
 }
