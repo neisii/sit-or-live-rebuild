@@ -14,14 +14,27 @@
       {
         "title": "sit-or-live",
         "width": 320,
-        "height": 1000,
+        "height": 780,
         "resizable": true,
         "fullscreen": false,
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
       }
     ],
     "security": {
-      "csp": null
+      "csp": null,
+      "capabilities": [
+        {
+          "identifier": "main-capability",
+          "windows": ["main"],
+          "permissions": [
+            "core:default",
+            "core:window:allow-set-always-on-top",
+            "core:window:default",
+            "dialog:default",
+            "shell:default"
+          ]
+        }
+      ]
     },
     "withGlobalTauri": true
   },

@@ -2,6 +2,7 @@
   "Profiles": [
     {
       "Name": "Sit or Live - Frankenstein Lab",
+      "Guid": "FB8B77F3-3BC5-8B98-5515-3A5EA21C9020",
       "Background Color": {
         "Red Component": 0.058823529411764705,
         "Green Component": 0.058823529411764705,
@@ -13,44 +14,84 @@
         "Blue Component": 0.8470588235294118
       },
       "Ansi 0 Color": {
-        "r": 0.058823529411764705,
-        "g": 0.058823529411764705,
-        "b": 0.11764705882352941
+        "Red Component": 0.058823529411764705,
+        "Green Component": 0.058823529411764705,
+        "Blue Component": 0.11764705882352941
       },
       "Ansi 1 Color": {
-        "r": 1,
-        "g": 0,
-        "b": 1
+        "Red Component": 1,
+        "Green Component": 0,
+        "Blue Component": 1
       },
       "Ansi 2 Color": {
-        "r": 0,
-        "g": 1,
-        "b": 0
+        "Red Component": 0,
+        "Green Component": 1,
+        "Blue Component": 0
       },
       "Ansi 3 Color": {
-        "r": 1,
-        "g": 0.8431372549019608,
-        "b": 0
+        "Red Component": 1,
+        "Green Component": 0.8431372549019608,
+        "Blue Component": 0
       },
       "Ansi 4 Color": {
-        "r": 0.5411764705882353,
-        "g": 0.16862745098039217,
-        "b": 0.8862745098039215
+        "Red Component": 0.5411764705882353,
+        "Green Component": 0.16862745098039217,
+        "Blue Component": 0.8862745098039215
       },
       "Ansi 5 Color": {
-        "r": 0.5764705882352941,
-        "g": 0.4392156862745098,
-        "b": 0.8588235294117647
+        "Red Component": 0.5764705882352941,
+        "Green Component": 0.4392156862745098,
+        "Blue Component": 0.8588235294117647
       },
       "Ansi 6 Color": {
-        "r": 0,
-        "g": 1,
-        "b": 1
+        "Red Component": 0,
+        "Green Component": 1,
+        "Blue Component": 1
       },
       "Ansi 7 Color": {
-        "r": 0.8470588235294118,
-        "g": 0.7490196078431373,
-        "b": 0.8470588235294118
+        "Red Component": 0.8470588235294118,
+        "Green Component": 0.7490196078431373,
+        "Blue Component": 0.8470588235294118
+      },
+      "Ansi 8 Color": {
+        "Red Component": 0.2901960784313726,
+        "Green Component": 0.2901960784313726,
+        "Blue Component": 0.3686274509803922
+      },
+      "Ansi 9 Color": {
+        "Red Component": 1,
+        "Green Component": 0,
+        "Blue Component": 1
+      },
+      "Ansi 10 Color": {
+        "Red Component": 0,
+        "Green Component": 1,
+        "Blue Component": 0
+      },
+      "Ansi 11 Color": {
+        "Red Component": 1,
+        "Green Component": 0.8431372549019608,
+        "Blue Component": 0
+      },
+      "Ansi 12 Color": {
+        "Red Component": 0.5411764705882353,
+        "Green Component": 0.16862745098039217,
+        "Blue Component": 0.8862745098039215
+      },
+      "Ansi 13 Color": {
+        "Red Component": 0.5764705882352941,
+        "Green Component": 0.4392156862745098,
+        "Blue Component": 0.8588235294117647
+      },
+      "Ansi 14 Color": {
+        "Red Component": 0,
+        "Green Component": 1,
+        "Blue Component": 1
+      },
+      "Ansi 15 Color": {
+        "Red Component": 0.9607843137254902,
+        "Green Component": 0.9215686274509803,
+        "Blue Component": 0.9607843137254902
       }
     }
   ]

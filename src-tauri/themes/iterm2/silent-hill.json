@@ -2,6 +2,7 @@
   "Profiles": [
     {
       "Name": "Sit or Live - Silent Hill",
+      "Guid": "F34805D2-6CA7-9390-6EAE-B082B2A8CEE5",
       "Background Color": {
         "Red Component": 0.1843137254901961,
         "Green Component": 0.30980392156862746,
@@ -13,44 +14,84 @@
         "Blue Component": 0.6627450980392157
       },
       "Ansi 0 Color": {
-        "r": 0.1843137254901961,
-        "g": 0.30980392156862746,
-        "b": 0.30980392156862746
+        "Red Component": 0.1843137254901961,
+        "Green Component": 0.30980392156862746,
+        "Blue Component": 0.30980392156862746
       },
       "Ansi 1 Color": {
-        "r": 0.803921568627451,
-        "g": 0.3607843137254902,
-        "b": 0.3607843137254902
+        "Red Component": 0.803921568627451,
+        "Green Component": 0.3607843137254902,
+        "Blue Component": 0.3607843137254902
       },
       "Ansi 2 Color": {
-        "r": 0.5647058823529412,
-        "g": 0.9333333333333333,
-        "b": 0.5647058823529412
+        "Red Component": 0.5647058823529412,
+        "Green Component": 0.9333333333333333,
+        "Blue Component": 0.5647058823529412
       },
       "Ansi 3 Color": {
-        "r": 0.9411764705882353,
-        "g": 0.9019607843137255,
-        "b": 0.5490196078431373
+        "Red Component": 0.9411764705882353,
+        "Green Component": 0.9019607843137255,
+        "Blue Component": 0.5490196078431373
       },
       "Ansi 4 Color": {
-        "r": 0.5294117647058824,
-        "g": 0.807843137254902,
-        "b": 0.9215686274509803
+        "Red Component": 0.5294117647058824,
+        "Green Component": 0.807843137254902,
+        "Blue Component": 0.9215686274509803
       },
       "Ansi 5 Color": {
-        "r": 0.8666666666666667,
-        "g": 0.6274509803921569,
-        "b": 0.8666666666666667
+        "Red Component": 0.8666666666666667,
+        "Green Component": 0.6274509803921569,
+        "Blue Component": 0.8666666666666667
       },
       "Ansi 6 Color": {
-        "r": 0.6862745098039216,
-        "g": 0.9333333333333333,
-        "b": 0.9333333333333333
+        "Red Component": 0.6862745098039216,
+        "Green Component": 0.9333333333333333,
+        "Blue Component": 0.9333333333333333
       },
       "Ansi 7 Color": {
-        "r": 0.6627450980392157,
-        "g": 0.6627450980392157,
-        "b": 0.6627450980392157
+        "Red Component": 0.6627450980392157,
+        "Green Component": 0.6627450980392157,
+        "Blue Component": 0.6627450980392157
+      },
+      "Ansi 8 Color": {
+        "Red Component": 0.4392156862745098,
+        "Green Component": 0.5019607843137255,
+        "Blue Component": 0.5647058823529412
+      },
+      "Ansi 9 Color": {
+        "Red Component": 0.803921568627451,
+        "Green Component": 0.3607843137254902,
+        "Blue Component": 0.3607843137254902
+      },
+      "Ansi 10 Color": {
+        "Red Component": 0.5647058823529412,
+        "Green Component": 0.9333333333333333,
+        "Blue Component": 0.5647058823529412
+      },
+      "Ansi 11 Color": {
+        "Red Component": 0.9411764705882353,
+        "Green Component": 0.9019607843137255,
+        "Blue Component": 0.5490196078431373
+      },
+      "Ansi 12 Color": {
+        "Red Component": 0.5294117647058824,
+        "Green Component": 0.807843137254902,
+        "Blue Component": 0.9215686274509803
+      },
+      "Ansi 13 Color": {
+        "Red Component": 0.8666666666666667,
+        "Green Component": 0.6274509803921569,
+        "Blue Component": 0.8666666666666667
+      },
+      "Ansi 14 Color": {
+        "Red Component": 0.6862745098039216,
+        "Green Component": 0.9333333333333333,
+        "Blue Component": 0.9333333333333333
+      },
+      "Ansi 15 Color": {
+        "Red Component": 0.8274509803921568,
+        "Green Component": 0.8274509803921568,
+        "Blue Component": 0.8274509803921568
       }
     }
   ]

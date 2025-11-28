@@ -33,6 +33,8 @@ pub fn run() {
             set_dark_mode,
             get_dark_mode,
             apply_theme,
+            set_always_on_top,
+            open_log_directory,
             analytics::report_theme_change,
             analytics::report_activity
         ])
@@ -108,6 +110,7 @@ fn set_dark_mode(enabled: bool) -> Result<(), String> {
     #[cfg(not(target_os = "macos"))]
     {
         // On other platforms, do nothing
+        let _ = enabled; // Suppress unused variable warning
         println!("Dark mode not supported on this platform");
         Ok(())
     }
@@ -148,4 +151,47 @@ fn apply_theme(theme_name: String, ide: String, terminal: String) -> Result<(), 
     }
     
     Ok(())
+}
+
+#[tauri::command]
+fn set_always_on_top(window: tauri::Window, enabled: bool) -> Result<(), String> {
+    window.set_always_on_top(enabled)
+        .map_err(|e| format!("Failed to set always on top: {}", e))?;
+    
+    info!("Always on top set to: {}", enabled);
+    Ok(())
+}
+
+#[tauri::command]
+fn open_log_directory() -> Result<String, String> {
+    let log_dir = dirs::home_dir()
+        .ok_or("Failed to get home directory")?
+        .join(".sit-or-live")
+        .join("logs");
+    
+    #[cfg(target_os = "macos")]
+    {
+        Command::new("open")
+            .arg(&log_dir)
+            .spawn()
+            .map_err(|e| format!("Failed to open log directory: {}", e))?;
+    }
+    
+    #[cfg(target_os = "windows")]
+    {
+        Command::new("explorer")
+            .arg(&log_dir)
+            .spawn()
+            .map_err(|e| format!("Failed to open log directory: {}", e))?;
+    }
+    
+    #[cfg(target_os = "linux")]
+    {
+        Command::new("xdg-open")
+            .arg(&log_dir)
+            .spawn()
+            .map_err(|e| format!("Failed to open log directory: {}", e))?;
+    }
+    
+    Ok(log_dir.to_string_lossy().to_string())
 }

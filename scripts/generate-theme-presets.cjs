@@ -67,27 +67,40 @@ function generateITerm2Theme(themeId, theme) {
   const bg = hexToRgb(theme.base00);
   const fg = hexToRgb(theme.base05);
   
+  // Helper to create color object in iTerm2 format
+  const createColor = (rgb) => ({
+    'Red Component': rgb.r,
+    'Green Component': rgb.g,
+    'Blue Component': rgb.b
+  });
+  
+  // Generate a consistent GUID based on theme ID
+  const crypto = require('crypto');
+  const guid = crypto.createHash('md5').update(`sit-or-live-${themeId}`).digest('hex');
+  const formattedGuid = `${guid.substring(0, 8)}-${guid.substring(8, 12)}-${guid.substring(12, 16)}-${guid.substring(16, 20)}-${guid.substring(20, 32)}`.toUpperCase();
+  
   return {
     'Profiles': [{
       'Name': `Sit or Live - ${theme.name}`,
-      'Background Color': {
-        'Red Component': bg.r,
-        'Green Component': bg.g,
-        'Blue Component': bg.b
-      },
-      'Foreground Color': {
-        'Red Component': fg.r,
-        'Green Component': fg.g,
-        'Blue Component': fg.b
-      },
-      'Ansi 0 Color': hexToRgb(theme.base00),
-      'Ansi 1 Color': hexToRgb(theme.base08),
-      'Ansi 2 Color': hexToRgb(theme.base0B),
-      'Ansi 3 Color': hexToRgb(theme.base0A),
-      'Ansi 4 Color': hexToRgb(theme.base0D),
-      'Ansi 5 Color': hexToRgb(theme.base0E),
-      'Ansi 6 Color': hexToRgb(theme.base0C),
-      'Ansi 7 Color': hexToRgb(theme.base05)
+      'Guid': formattedGuid,
+      'Background Color': createColor(bg),
+      'Foreground Color': createColor(fg),
+      'Ansi 0 Color': createColor(hexToRgb(theme.base00)),
+      'Ansi 1 Color': createColor(hexToRgb(theme.base08)),
+      'Ansi 2 Color': createColor(hexToRgb(theme.base0B)),
+      'Ansi 3 Color': createColor(hexToRgb(theme.base0A)),
+      'Ansi 4 Color': createColor(hexToRgb(theme.base0D)),
+      'Ansi 5 Color': createColor(hexToRgb(theme.base0E)),
+      'Ansi 6 Color': createColor(hexToRgb(theme.base0C)),
+      'Ansi 7 Color': createColor(hexToRgb(theme.base05)),
+      'Ansi 8 Color': createColor(hexToRgb(theme.base03)),
+      'Ansi 9 Color': createColor(hexToRgb(theme.base08)),
+      'Ansi 10 Color': createColor(hexToRgb(theme.base0B)),
+      'Ansi 11 Color': createColor(hexToRgb(theme.base0A)),
+      'Ansi 12 Color': createColor(hexToRgb(theme.base0D)),
+      'Ansi 13 Color': createColor(hexToRgb(theme.base0E)),
+      'Ansi 14 Color': createColor(hexToRgb(theme.base0C)),
+      'Ansi 15 Color': createColor(hexToRgb(theme.base07))
     }]
   };
 }
