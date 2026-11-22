@@ -4,6 +4,11 @@
 
 A Tauri-based desktop application that automatically switches IDE/terminal themes based on weather and monitors developer health to prevent sedentary lifestyle issues.
 
+> **Status (2025-11): hackathon entry, no longer in development.**
+> Built for the Kiroween hackathon with AWS Kiro (spec-driven development); work stopped after submission.
+> The 15 desktop features below work (macOS only). The web dashboard is unfinished (2 of 4 features, mock data).
+> "100% COMPLETE" below refers to the desktop app.
+
 ## 🎯 Project Status
 
 **Current Implementation**: 🎉 100% COMPLETE - Production Ready  
